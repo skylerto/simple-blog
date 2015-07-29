@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    redirect_to dashboard_posts_path
   end
 
   def show

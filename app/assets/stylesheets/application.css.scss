@@ -93,6 +93,18 @@ a{
   }
 }
 
+.nav_link{
+  outline: none;
+  background: transparent;
+  padding: 0 1em;
+  &:hover {
+    color: #33acb7;
+    a {
+      color: #33acb7 !important;
+    }
+  }
+}
+
 .button {
   outline: none;
   background: transparent;
@@ -108,6 +120,20 @@ a{
   }
 }
 
+.admin_user {
+  outline: none;
+  width: 25px;
+  float: left;
+  font-size: 0.5em;
+  margin-right: 1em;
+  margin-top: 0.4em; 
+  background: transparent;
+  border: 1px solid red;
+  color: red;
+  padding: 0.5em 1.5em;
+  border-radius: 1.5em;
+}
+
 .clearfix:after {
   content: ".";
   visibility: hidden;
@@ -118,6 +144,14 @@ a{
 
 #main_content {
   margin-left: 250px;
+  &.hover{
+
+      color: #33acb7;
+
+  a {
+    color: #9eafba;
+    text-decoration: none;
+  }}
   #header {
     padding: 1em 3em;
     border-bottom: 1px solid #d6dce0;
@@ -126,19 +160,40 @@ a{
     p {
       display: inline;
     }
-    a {
-      color: #9eafba;
-      text-decoration: none;
-    }
+
     .buttons {
       float: right;
-      margin-top: -6px;
       .button {
         font-size: 0.8em;
         margin-left: 0.5em;
       }
     }
   }
+  #admin_header {
+    padding: 1em 3em;
+    border-bottom: 1px solid #d6dce0;
+    background: #FAFCFE;
+    color: #9eafba;
+    p {
+      display: inline;
+    }
+    &.hover{
+
+        color: #33acb7;
+
+    a {
+      color: #9eafba;
+      text-decoration: none;
+    }}
+    .buttons {
+      float: right;
+      .button {
+        font-size: 0.8em;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
   .alert, #error_explanation {
     font-size: 1em;
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -293,4 +348,51 @@ input[type="submit"]{
     border: 1px solid #33acb7;
     color: #33acb7;
   }
+}
+
+
+#admin_panel {
+  height:100%;
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+
+  #new_post{
+    width: 126px;
+    padding: 1.5em 3em 0 3em;
+    float: right;
+  }
+  .post_wrapper {
+    padding: 1em 3em 1em 3em;
+    border-bottom: 1px solid #d6dce0;
+
+    .edit_post{
+      padding-bottom: 0.5em;
+      padding-top: 0.5em;
+      .button {
+        font-size: 0.8em;
+        margin-left: 0.5em;
+      }
+    }
+    .title {
+      margin: 0;
+      a {
+        font-weight: 500;
+        text-decoration: none;
+        color: #2a2f35;
+        font-size: 1.1em;
+        &:hover {
+          color: #33acb7;
+        }
+      }
+    }
+    .date_and_author {
+      color: #9eafba;
+      margin: 0.5em 0 0 0;
+    }
+    .excerpt {
+      margin: 0.5em 0 0 0;
+    }
+  }
+
 }

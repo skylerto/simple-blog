@@ -1,0 +1,30 @@
+<div id="admin_panel">
+
+    <div id="new_post">
+      <span class="button"><%= link_to "New Post", new_post_path %> </span>
+    </div>
+    <div class="clearfix"></div>
+<% @posts.each do |post| %>
+  <div class="post_wrapper">
+    <h2 class="title">
+      <%= link_to post.title, post%>
+    </h2>
+    <p class="date_and_author">
+      <%= post.created_at.strftime("%B, %d, %Y")%>
+      <% if !post.user_name.nil?%>
+      by <%= post.user_name %>
+      <% end %>
+    </p>
+
+    <p class="excerpt">
+        <%= post.body[0..250] %> ..
+    <p>
+
+
+      <div class="edit_post">
+        <span class="button"><%= link_to 'Edit', edit_post_path(post) %></span>
+        <span class="button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?'} %></span>
+      </div>
+  </div>
+<% end %>
+</div>

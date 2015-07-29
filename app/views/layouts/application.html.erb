@@ -51,7 +51,10 @@
 
     <div class="buttons">
       <% if user_signed_in? %>
-        <span class="button"><%= link_to "New Post", new_post_path %> </span>
+        <% if current_user.admin? %>
+          <span class="button"><%= link_to "New Post", new_post_path %> </span>
+          <span class="button"><%= link_to "New Post", new_post_path %> </span>
+        <% end %>
         <span class="button"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </span>
 
       <% else %>

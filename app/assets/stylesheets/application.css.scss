@@ -133,6 +133,20 @@ a{
       }
     }
   }
+  .alert, #error_explanation {
+    font-size: 1em;
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
+  }
+  .alert {
+    padding: 3em 3em 0 3em;
+  }
+  #error_explanation{
+    padding: 0 3em 0 3em;
+  }
   .post_wrapper {
     padding: 3em;
     border-bottom: 1px solid #d6dce0;

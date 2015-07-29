@@ -15,9 +15,15 @@
  */
 
 @import 'normalize';
+$font-content: 'Open sans', sans-serif;
 
 html, body {
   font-family: 'Raleway', sans-serif;
+}
+
+p {
+
+    font-family: $font-content;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -164,6 +170,9 @@ a{
     }
     .date_and_author {
       color: #9eafba;
+      margin: 0.5em 0 0 0;
+    }
+    .excerpt {
       margin: 0.5em 0 0 0;
     }
   }

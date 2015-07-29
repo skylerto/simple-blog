@@ -3,8 +3,15 @@
     <h2 class="title">
       <%= link_to post.title, post%>
     </h2>
-    <p class="date">
+    <p class="date_and_author">
       <%= post.created_at.strftime("%B, %d, %Y")%>
+      <% if !post.user_name.nil?%>
+      by <%= post.user_name %>
+      <% end %>
     </p>
+
+    <p class="excerpt">
+        <%= post.body[0..250] %> ..
+    <p>
   </div>
 <% end %>

@@ -32,9 +32,7 @@
   </ul>
 
   <p class="sign_in">
-  <% if !user_signed_in? %>
-    <%= link_to('Login', new_user_session_path)  %>
-  <% else %>
+  <% if user_signed_in? %>
     Hello, <%= current_user.email %>
   <% end %>
     </p>
@@ -50,12 +48,15 @@
       <%= link_to "Back to All posts", root_path %>
     <% end %>
 
-    <% if user_signed_in? %>
     <div class="buttons">
-      <button class="button"><%= link_to "New Post", new_post_path %> </button>
-      <button class="button"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </button>
+      <% if user_signed_in? %>
+        <button class="button"><%= link_to "New Post", new_post_path %> </button>
+        <button class="button"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </button>
+
+      <% else %>
+        <button class="button"><%= link_to('Login', new_user_session_path)  %></button>
+      <% end %>
     </div>
-    <% end %>
   </div>
 
 

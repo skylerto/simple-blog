@@ -7,6 +7,9 @@
     <% end %>
   </ul>
 <% end %>
+<div style="display: none;">
+<%= f.text_field :user_name, :value => current_user.email  %>
+</div>
   <p>
     <%= f.label :title %> </br>
     <%= f.text_field :title %> </br>

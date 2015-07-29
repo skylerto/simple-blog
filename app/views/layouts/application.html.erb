@@ -50,11 +50,11 @@
 
     <div class="buttons">
       <% if user_signed_in? %>
-        <button class="button"><%= link_to "New Post", new_post_path %> </button>
-        <button class="button"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </button>
+        <span class="button"><%= link_to "New Post", new_post_path %> </span>
+        <span class="button"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </span>
 
       <% else %>
-        <button class="button"><%= link_to('Login', new_user_session_path)  %></button>
+        <div class="button"><%= link_to('Login', new_user_session_path)  %></div>
       <% end %>
     </div>
   </div>

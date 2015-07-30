@@ -23,13 +23,11 @@
     <li><%= link_to "About", about_path %></li>
   </ul>
 
-
-  <ul>
+  <ul id="social">
     <li class="category">Social</li>
-    <li><a href="https://twitter.com/skylerto">Twitter</a></li>
-    <li><a href="http://instagram.com/skylerclayne">Instagram</a></li>
-    <li><a href="https://github.com/skylerto">Github</a></li>
-    <li><a href="mailto:skylerclayne@gmail.com">Email</a></li>
+    <li><a href="https://twitter.com/skylerto"> <%= image_tag "sm/twitter.png", :class => "social_media" %> </a></li>
+    <li><a href="https://github.com/skylerto"><%= image_tag "sm/github.png", :class => "social_media" %> </a></li>
+    <li><a href="mailto:skylerclayne@gmail.com"><%= image_tag "sm/mail.png", :class => "social_media" %> </a></li>
   </ul>
 
   <p class="sign_in">

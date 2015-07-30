@@ -11,30 +11,28 @@
 <body>
 
 <div id="sidebar">
-  <div id="logo">
-    <%= link_to root_path do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
+
+  <div class="social">
+      <span><a href="https://twitter.com/skylerto"> <%= image_tag "sm/twitter.png", :class => "social_media" %> </a></span>
+      <span><a href="https://github.com/skylerto"><%= image_tag "sm/github.png", :class => "social_media" %> </a></span>
+      <span><a href="mailto:skylerclayne@gmail.com"><%= image_tag "sm/mail.png", :class => "social_media" %> </a></span>
+    </ul>
   </div>
 
-  <ul>
-    <li class="category">Website</li>
-    <li><%= link_to "Blog", root_path %></li>
-    <li><%= link_to "About", about_path %></li>
-  </ul>
+  <div id="navigation">
+    <div id="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
 
-  <ul id="social">
-    <li class="category">Social</li>
-    <li><a href="https://twitter.com/skylerto"> <%= image_tag "sm/twitter.png", :class => "social_media" %> </a></li>
-    <li><a href="https://github.com/skylerto"><%= image_tag "sm/github.png", :class => "social_media" %> </a></li>
-    <li><a href="mailto:skylerclayne@gmail.com"><%= image_tag "sm/mail.png", :class => "social_media" %> </a></li>
-  </ul>
+    <ul>
+      <li class="category">Website</li>
+      <li><%= link_to "Blog", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+    </ul>
+  </div>
 
-  <p class="sign_in">
-  <% if user_signed_in? and !current_user.admin? %>
-    Hello, <%= current_user.email %>
-  <% end %>
-    </p>
 </div>
 
 <div id="main_content">
@@ -49,9 +47,7 @@
 
     <div class="buttons">
       <% if user_signed_in? %>
-        <% if current_user.admin? %>
           <span class="nav_link"><%= link_to "Dashboard", dashboard_path %> </span>
-        <% end %>
         <span class="nav_link"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </span>
 
       <% else %>

@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<div id="main_content">
 <div id="sidebar">
 
   <div id="navigation">
@@ -33,7 +34,7 @@
         <% end %>
       <li class="nav_link"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </li>
       <% else %>
-        <div class="nav_link"><%= link_to('Login', new_user_session_path)  %></div>
+        <li class="nav_link"><%= link_to('Login', new_user_session_path)  %></li>
       <% end %>
     </ul>
   </div>
@@ -48,31 +49,9 @@
 
 </div>
 
-<div id="main_content">
-  <div id="header">
-    <% if current_page?(root_path) %>
-      <p>All Posts</p>
-    <% elsif current_page?(about_path) %>
-      <p>About</p>
-    <% else %>
-      <%= link_to "Back to All posts", root_path %>
-    <% end %>
 
-    <div class="buttons">
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <span class="nav_link"><%= link_to "Dashboard", dashboard_path %> </span>
-        <% end %>
-        <span class="nav_link"><%= current_user.email.split('@')[0].capitalize %>, <%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </span>
+<div id="admin">
 
-      <% else %>
-        <div class="nav_link"><%= link_to('Login', new_user_session_path)  %></div>
-      <% end %>
-    </div>
-  </div>
-  </div>
-
-  <div id="admin">
   <div id="admin_header">
     <p><%= current_user.email.split('@')[0].capitalize %>'s Dashboard</p>
     <div class="buttons">
@@ -82,11 +61,15 @@
     </div>
   </div>
 
-  <% flash.each do |name, msg| %>
-   <%= content_tag(:div, msg, class: "alert") %>
-  <% end %>
 
-  <%= yield %>
+    <% flash.each do |name, msg| %>
+      <div class="message">
+       <%= content_tag(:div, msg, class: "alert") %>
+     </div>
+    <% end %>
+
+    <%= yield %>
+
 </div>
 </body>
 </html>

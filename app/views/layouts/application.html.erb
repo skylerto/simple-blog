@@ -62,7 +62,9 @@
 
 
   <% flash.each do |name, msg| %>
+  <div class="message">
    <%= content_tag(:div, msg, class: "alert") %>
+   </div>
   <% end %>
 
   <%= yield %>

@@ -15,7 +15,7 @@
   <div id="navigation">
     <div id="logo">
       <%= link_to root_path do %>
-        <%= image_tag "logo.png" %>
+        <%= image_tag "logo-green.png" %>
       <% end %>
     </div>
 
@@ -25,7 +25,7 @@
       <li><%= link_to "About", about_path %></li>
     </ul>
   </div>
-  
+
 
   <div class="social">
       <span><a href="https://twitter.com/skylerto"> <%= image_tag "sm/twitter.png", :class => "social_media" %> </a></span>
@@ -59,6 +59,7 @@
     </div>
   </div>
 
+  <div id="admin">
   <div id="admin_header">
     <p><%= current_user.email.split('@')[0].capitalize %>'s Dashboard</p>
     <div class="buttons">
@@ -73,6 +74,7 @@
   <% end %>
 
   <%= yield %>
+</div>
 </div>
 </body>
 </html>

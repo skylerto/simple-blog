@@ -28,6 +28,7 @@ class PostsController < ApplicationController
   end
 
   def update
+
     @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to @post
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:user_name, :title, :body)
+    params.require(:post).permit(:user, :title, :body)
   end
 end

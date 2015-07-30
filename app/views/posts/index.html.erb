@@ -11,7 +11,7 @@
     </p>
 
     <p class="excerpt">
-        <%= post.body[0..250] %> ..
+        <%= post.body[0..250].html_safe %> ...
     <p>
   </div>
 <% end %>

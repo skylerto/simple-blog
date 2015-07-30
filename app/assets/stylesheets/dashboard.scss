@@ -1,3 +1,76 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#admin_header {
+  padding: 1em 3em;
+  border-bottom: 1px solid #d6dce0;
+  background: #3369E3;
+  color: white;
+  p {
+    display: inline;
+  }
+  &.hover{
+
+      color: #33acb7;
+
+    a {
+      color: #9eafba;
+      text-decoration: none;
+    }
+  }
+  .buttons {
+    float: right;
+    .button {
+      font-size: 0.8em;
+      margin-left: 0.5em;
+    }
+  }
+}
+
+#admin_panel {
+  height:100%;
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+
+  #new_post{
+    width: 126px;
+    padding: 1.5em 3em 0 3em;
+    float: right;
+  }
+  .post_wrapper {
+    padding: 1em 3em 1em 3em;
+    border-bottom: 1px solid #d6dce0;
+
+    .edit_post{
+      padding-bottom: 0.5em;
+      padding-top: 0.5em;
+      .button {
+        font-size: 0.8em;
+        margin-left: 0.5em;
+      }
+    }
+    .title {
+      margin: 0;
+      a {
+        font-weight: 500;
+        text-decoration: none;
+        color: #2a2f35;
+        font-size: 1.1em;
+        &:hover {
+          color: #33acb7;
+        }
+      }
+    }
+    .date_and_author {
+      color: #9eafba;
+      margin: 0.5em 0 0 0;
+    }
+    .excerpt {
+      margin: 0.5em 0 0 0;
+    }
+  }
+
+}

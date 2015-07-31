@@ -9,9 +9,11 @@
     by <%= @post.user_name %>
   <% end %>
 
-  <% if current_user.admin? %>
-    | <%= link_to 'Edit', edit_post_path(@post) %>
-  <% end %>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  | <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
+<% end  %>
 </p>
 
 <p class="body">

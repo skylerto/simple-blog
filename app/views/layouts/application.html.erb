@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="main_content">
+
 <div id="sidebar">
 
   <div id="navigation">
@@ -20,10 +20,11 @@
       <% end %>
     </div>
 
+
+      <div class="category nav_item">Website</div>
+      <div class="nav_item"><%= link_to "Blog", root_path %></div>
+      <div class="nav_item"><%= link_to "About", about_path %></div>
     <ul>
-      <li class="category">Website</li>
-      <li><%= link_to "Blog", root_path %></li>
-      <li><%= link_to "About", about_path %></li>
     </ul>
 
     <ul>
@@ -49,7 +50,7 @@
 
 </div>
 
-
+<div id="main_content">
   <% flash.each do |name, msg| %>
     <div class="message">
      <%= content_tag(:div, msg, class: "alert") %>

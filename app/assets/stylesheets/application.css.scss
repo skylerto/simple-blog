@@ -29,6 +29,10 @@ html, body {
   background-color:  #f5f7f9 ;
 }
 
+body {
+
+}
+
 p {
 
     font-family: $font-content;
@@ -44,11 +48,8 @@ a{
 }
 
 #sidebar {
-  width: 250px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
+  width: 100%;
+  height: 25px;
   background: #343d4b;
   padding: 7em 0 0 0;
   border-right: 1px solid #d6dce0;
@@ -59,17 +60,31 @@ a{
     #logo {
       width: 40px;
       position: absolute;
-      right: 4em;
-      top: 2em;
+
+      top: 3em;
+      left: 2em;
       img {
           width: 75px;
+      }
+    }
+
+    .nav_item{
+      float: right;
+      margin: 0 1em 0 1em;
+      width: 5%;
+      a {
+        color: #9eafba;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        &:hover {
+          color: #33acb7;
+        }
       }
     }
 
     ul {
       list-style: none;
       text-align: right;
-      padding-right: 3em;
       .category {
         font-weight: 700;
         font-size: 0.7em;
@@ -102,8 +117,6 @@ a{
   }
 
   .social {
-    position: absolute;
-    right: 5em;
     top: 80%;
     font-size: 0.8em;
     color: #9eafba;
@@ -164,7 +177,8 @@ a{
 }
 
 #main_content {
-  margin-left: 250px;
+  width: 75%;
+  margin: 0 auto;
   background-color: white;
   &.hover{
 

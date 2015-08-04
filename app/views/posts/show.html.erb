@@ -5,8 +5,8 @@
 
 <p class="date_and_author">
   Submitted <%= time_ago_in_words(@post.created_at) %> ago
-  <% if !@post.user_name.nil?%>
-    by <%= @post.user_name %>
+  <% if !@post.user_id.nil?%>
+    by <%= User.find_by_id(@post.user_id).email %>
   <% end %>
 
 <% if user_signed_in? %>

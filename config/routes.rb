@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   get '/dashboard/users/:id', to: 'dashboard#promote'
   put '/dashboard/users/:id', to: 'dashboard#promote'
   get '/dashboard/users/delete/:id', to: 'dashboard#destroy'
+  get '/dashboard/settings', to: 'dashboard#settings'
+  get '/dashboard/user', to: 'dashboard#user_edit'
+  get '/dashboard/user/:id', to: 'dashboard#user_edit'
 
 end

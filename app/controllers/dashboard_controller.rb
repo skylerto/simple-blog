@@ -5,6 +5,14 @@ class DashboardController < ApplicationController
     redirect_to dashboard_posts_path
   end
 
+  def settings
+    @user = current_user
+  end
+
+  def user_edit
+    @user = current_user
+  end
+
   def show
   end
 

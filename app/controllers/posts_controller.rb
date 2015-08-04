@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
+    @post.user_id = current_user.id
     if @post.save
       redirect_to @post
     else
@@ -28,8 +28,8 @@ class PostsController < ApplicationController
   end
 
   def update
-
     @post = Post.find(params[:id])
+    @post.user = current_user
     if @post.update(post_params)
       redirect_to @post
     else
@@ -40,12 +40,15 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
-    redirect_to root_path
+    if current_user.admin?
+      redirect_to '/dashboard/posts'
+    else
+      redirect_to root_path
+    end
   end
 
   private
   def post_params
-    params.require(:post).permit(:user, :title, :body)
+    params.require(:post).permit(:title, :body)
   end
 end

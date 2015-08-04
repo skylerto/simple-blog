@@ -8,15 +8,14 @@
   </ul>
 <% end %>
 
+<!-- <h1><%= User.find_by_email(current_user.email) %></h1>
 <div style="display: none;">
 
-
-
-<%= f.text_field :user, :value => current_user  %>
+<%= f.text_field :user, :value => User.find_by_email(current_user.email)  %>
 
 
 
-</div>
+</div> -->
 
   <p>
     <%= f.label :title %> </br>

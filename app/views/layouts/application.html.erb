@@ -33,6 +33,20 @@
 
   </div>
 
+  <% if user_signed_in? and current_user.admin? %>
+  <div id="admin">
+    <div id="admin_header">
+      <p><%= current_user.email.split('@')[0].capitalize %>'s Dashboard</p>
+      <div class="buttons">
+        <span class="nav_link"><%= link_to "Posts", dashboard_posts_path %> </span>
+        <span class="nav_link"><%= link_to "Users", dashboard_users_path %> </span>
+        <span class="nav_link"><%= link_to 'Comments', dashboard_path %> </span>
+        <span class="nav_link"><%= link_to 'Settings', 'dashboard/settings' %> </span>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
 <div id="main_content">
   <% flash.each do |name, msg| %>
     <div class="message">

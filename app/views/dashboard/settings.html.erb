@@ -1,0 +1,26 @@
+<div id="admin_panel">
+
+  <div id="page_wrapper">
+    <!-- PROFILE PICTURE
+     <div id="profile_image">
+      <%= image_tag "profile.jpg" %>
+    </div> -->
+
+    <div id="content">
+      <% if @user.name? %>
+        <p>Name: <%= @user.name %></p>
+      <% end %>
+      <p>Username: <%= @user.email %></p>
+      <% if @user.about? %>
+        <p>
+          <%= @user.about %>
+        </p>
+      <% end %>
+      <div id="new_post">
+        <span class="button"><%= link_to "Edit", '/dashboard/user' %> </span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+</div>

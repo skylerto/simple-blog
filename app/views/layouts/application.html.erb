@@ -21,7 +21,7 @@
     <div id="navigation">
       <div class="nav_item"><%= link_to "Home", root_path %></div>
       <div class="nav_item"><%= link_to "About", about_path %></div>
-      <div class="nav_item"><%= link_to "Blog", root_path %></div>
+      <div class="nav_item"><%= link_to "Blog", posts_path %></div>
       <div class="nav_item"><%= link_to "Portfolio", root_path %></div>
       <div class="nav_item"><%= link_to "Shop", root_path %></div>
       <% if user_signed_in? %>
@@ -33,13 +33,15 @@
 
   </div>
 
-  <% if user_signed_in? and current_user.admin? %>
+  <% if user_signed_in? %>
   <div id="admin">
     <div id="admin_header">
-      <p><%= current_user.email.split('@')[0].capitalize %>'s Dashboard</p>
+      <p><%= current_user.name.nil? ? current_user.email.split('@')[0].capitalize : current_user.name %>'s Dashboard</p>
       <div class="buttons">
-        <span class="nav_link"><%= link_to "My Posts", dashboard_posts_path %> </span>
-        <span class="nav_link"><%= link_to "Users", dashboard_users_path %> </span>
+        <% if current_user.admin? %>
+          <span class="nav_link"><%= link_to "My Posts", dashboard_posts_path %> </span>
+          <span class="nav_link"><%= link_to "Users", dashboard_users_path %> </span>
+        <% end %>
         <span class="nav_link"><%= link_to 'Comments', dashboard_path %> </span>
         <span class="nav_link"><%= link_to 'Settings', :controller => 'dashboard', :action => 'settings' %> </span>
       </div>

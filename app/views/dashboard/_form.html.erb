@@ -8,34 +8,15 @@
   </ul>
 <% end %>
 
-<!-- <h1><%= User.find_by_email(current_user.email) %></h1>
-<div style="display: none;">
-
-<%= f.text_field :user, :value => User.find_by_email(current_user.email)  %>
-
-
-
-</div> -->
-
   <p>
-    <%= f.label :first_name %> </br>
-    <%= f.text_field :first_name %> </br>
-  </p>
-
-    <p>
-      <%= f.label :last_name %> </br>
-      <%= f.text_field :last_name %> </br>
-    </p>
-
-  <p>
-    <%= f.label :last_name %> </br>
-    <%= f.text_field :last_name %> </br>
+    <%= f.label :name %> </br>
+    <%= f.text_field :name %> </br>
   </p>
 
 
     <p>
       <%= f.label :about %> </br>
-      <%= f.textarea :about %> </br>
+      <%= f.text_area :about %> </br>
     </p>
 
 

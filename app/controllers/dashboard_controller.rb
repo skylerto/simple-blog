@@ -16,6 +16,19 @@ class DashboardController < ApplicationController
   def show
   end
 
+  def user_edit
+    @user = User.find_by_id(current_user.id)
+  end
+
+  def user_update
+    @user = User.find(params[:id])
+    if @user.update(post_params)
+      redirect_to '/dashboard/settings'
+    else
+      render 'edit'
+    end
+  end
+
   def comments
     @comments = Comment.all.order('created_at DESC')
   end
@@ -47,5 +60,11 @@ class DashboardController < ApplicationController
     @user.destroy
 
     redirect_to dashboard_users_path
+  end
+
+  private
+
+  def post_params
+    params.require(:user).permit(:name, :about)
   end
 end

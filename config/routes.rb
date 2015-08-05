@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get '/dashboard/users/delete/:id', to: 'dashboard#destroy'
   get '/dashboard/settings', to: 'dashboard#settings'
   get '/dashboard/user', to: 'dashboard#user_edit'
-  get '/dashboard/user/:id', to: 'dashboard#user_edit'
 
+  get '/dashboard/user_edit/:id', to: 'dashboard#user_edit', :as => :user
+  post '/dashboard/user_edit/:id', to: 'dashboard#user_update'
+  patch '/dashboard/user_edit/:id', to: 'dashboard#user_update'
+  
 end

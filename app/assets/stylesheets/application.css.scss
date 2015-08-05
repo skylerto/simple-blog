@@ -244,6 +244,8 @@ a {
       color: #9eafba;
       margin: 0.5em 0 2em 0;
     }
+
+
     #comments {
       h2 {
         margin: 3em 0 1em 0;
@@ -260,6 +262,17 @@ a {
 
       .comment_content {
         float: left;
+        width: 100%;
+        .comment_header{
+          width: 100px;
+          float: left;
+        }
+
+        .comment_contents{
+          width: 50%;
+          float: left;
+          margin-left: 1em;
+        }
         .comment_name {
           margin: 1em 0 0 0;
           font-size: 0.7em;

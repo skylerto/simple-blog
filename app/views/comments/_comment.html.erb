@@ -1,8 +1,16 @@
 <div class="comment clearfix">
   <div class="comment_content">
-    <p class="comment_name"><strong><%= User.find_by_id(comment.user_id).name == nil ? User.find_by_id(comment.user_id).email : User.find_by_id(comment.user_id).name %></strong></p>
-    <p class="comment_body"><%= comment.body %></p>
-    <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> ago</p>
+    <div class="comment_header">
+
+      <% if not User.find_by_id(comment.user_id).avatar.nil? %>
+        <%= image_tag(User.find_by_id(comment.user_id).avatar.url(:thumb)) %>
+      <% end %>
+      <p class="comment_name"><strong><%= User.find_by_id(comment.user_id).name == nil ? User.find_by_id(comment.user_id).email : User.find_by_id(comment.user_id).name %></strong></p>
+      <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> ago</p>
+    </div>
+    <div class="comment_contents">
+      <p class="comment_body"><%= comment.body %></p>
+    </div>
   </div>
   <% if user_signed_in? %>
     <% if current_user.admin? or current_user.id == comment.user_id %>

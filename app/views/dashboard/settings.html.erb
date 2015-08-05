@@ -7,6 +7,9 @@
     </div> -->
 
     <div id="content">
+      <div id="profile_image">
+        <%= image_tag(current_user.avatar.url(:medium), :class => "profile") %>
+      </div>
       <% if @user.name? %>
         <p>Name: <%= @user.name %></p>
       <% end %>

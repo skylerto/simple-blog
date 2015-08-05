@@ -8,6 +8,19 @@
   </ul>
 <% end %>
 
+<p>
+
+    <%= f.label :avatar %>
+</p>
+<p>
+
+  <% if not current_user.avatar.nil? %>
+    <%= image_tag(current_user.avatar.url(:thumb)) %>
+  <% end %>
+  <br/>
+  <%= f.file_field :avatar %>
+</p>
+
   <p>
     <%= f.label :name %> </br>
     <%= f.text_field :name %> </br>

@@ -5,25 +5,33 @@
   <% else %>
   <div class="post_wrapper">
     <div class="clearfix">
-    <% if user.admin? %>
-      <p class="admin_user">admin</p>
-    <% end %>
-    <h2 class="title">
-      <%= user.email %>
-    </h2>
+
+<div style="width:100px; float:left;">
+
+  <% if not user.avatar.nil? %>
+    <%= image_tag(user.avatar.url(:thumb)) %>
+  <% end %>
+</div>
+
+<div style="width:50%; float:left;">
+  <% if user.admin? %>
+    <p class="admin_user">admin</p>
+  <% end %>
+  <h2 class="title">
+    <%= user.email %>
+  </h2>
+
+    <div class="edit_post">
+      <% if user.admin? %>
+        <span class="button"><%= link_to 'Demote', controller: "dashboard", action: "promote", id: user.id %></span>
+      <% else %>
+        <span class="button"><%= link_to 'Promote', controller: "dashboard", action: "promote", id: user.id %></span>
+      <% end %>
+
+        <span class="button"><%= link_to 'Delete',  controller: "dashboard", action: "destroy", id: user.id, data: {confirm: 'Are you sure?'} %></span>
     </div>
-
-
-
-      <div class="edit_post">
-        <% if user.admin? %>
-          <span class="button"><%= link_to 'Demote', controller: "dashboard", action: "promote", id: user.id %></span>
-        <% else %>
-          <span class="button"><%= link_to 'Promote', controller: "dashboard", action: "promote", id: user.id %></span>
-        <% end %>
-
-          <span class="button"><%= link_to 'Delete',  controller: "dashboard", action: "destroy", id: user.id, data: {confirm: 'Are you sure?'} %></span>
-      </div>
+</div>
+</div>
   </div>
 <% end %>
 <% end %>

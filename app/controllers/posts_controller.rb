@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.user = current_user
+    #@post.user_id = current_user.id
     if @post.update(post_params)
       redirect_to @post
     else

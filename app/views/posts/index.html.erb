@@ -5,8 +5,8 @@
     </h2>
     <p class="date_and_author">
       <%= post.created_at.strftime("%B, %d, %Y")%>
-      <% if !post.user_name.nil?%>
-      by <%= post.user_name %>
+      <% if !@post.user_id.nil?%>
+        by <%=User.find_by_id(@post.user_id).name == nil ? User.find_by_id(@post.user_id).email : User.find_by_id(@post.user_id).name %>
       <% end %>
     </p>
 

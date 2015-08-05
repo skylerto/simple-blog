@@ -13,5 +13,12 @@
     <p class="excerpt">
         <%= post.body[0..250].html_safe %> ...
     <p>
+    <% if user_signed_in? and current_user.admin? %>
+      <div class="edit_post">
+        <span class="button"><%= link_to 'Edit', edit_post_path(post) %></span>
+        <span class="button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?'} %></span>
+      </div>
+    <% end %>
+
   </div>
 <% end %>

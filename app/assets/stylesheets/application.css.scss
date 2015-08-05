@@ -142,20 +142,6 @@ a {
   }
 }
 
-.admin_user {
-  outline: none;
-  width: 25px;
-  float: left;
-  font-size: 0.5em;
-  margin-right: 1em;
-  margin-top: 0.4em;
-  background: transparent;
-  border: 1px solid red;
-  color: red;
-  padding: 0.5em 1.5em;
-  border-radius: 1.5em;
-}
-
 .clearfix:after {
   content: ".";
   visibility: hidden;
@@ -164,7 +150,9 @@ a {
   clear: both;
 }
 
-/**/
+/*
+*
+*/
 #main_content {
   width: 75%;
   margin: 0 auto;
@@ -296,6 +284,9 @@ a {
   }
 }
 
+/*
+*
+*/
 #page_wrapper {
   padding: 3em;
   #profile_image {
@@ -373,9 +364,23 @@ input[type="submit"]{
   }
 }
 
-#admin_panel {
-  .user_settings{
-    width: 50%;
-    margin: 0 auto;
+
+/*
+*   MAIN PAGE
+*/
+#description {
+  .title {
+    text-align: center;
+  }
+  .blog,
+  .shop,
+  .portfolio {
+    width: 28%;
+    float: left;
+    margin: 2em 1em;
+
+    p {
+      text-align: justify;
+    }
   }
 }

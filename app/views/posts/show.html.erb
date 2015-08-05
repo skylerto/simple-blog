@@ -6,7 +6,7 @@
 <p class="date_and_author">
   Submitted <%= time_ago_in_words(@post.created_at) %> ago
   <% if !@post.user_id.nil?%>
-    by <%= User.find_by_id(@post.user_id).email %>
+    by <%=User.find_by_id(@post.user_id).name == nil ? User.find_by_id(@post.user_id).email : User.find_by_id(@post.user_id).name %>
   <% end %>
 
 <% if user_signed_in? %>
@@ -32,6 +32,8 @@
     To add a comment, please <%= link_to('sign in', new_user_session_path) %>.
   </p>
 <% end %>
+
+
 
 </div>
 </div>

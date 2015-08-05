@@ -38,10 +38,10 @@
     <div id="admin_header">
       <p><%= current_user.email.split('@')[0].capitalize %>'s Dashboard</p>
       <div class="buttons">
-        <span class="nav_link"><%= link_to "Posts", dashboard_posts_path %> </span>
+        <span class="nav_link"><%= link_to "My Posts", dashboard_posts_path %> </span>
         <span class="nav_link"><%= link_to "Users", dashboard_users_path %> </span>
         <span class="nav_link"><%= link_to 'Comments', dashboard_path %> </span>
-        <span class="nav_link"><%= link_to 'Settings', 'dashboard/settings' %> </span>
+        <span class="nav_link"><%= link_to 'Settings', :controller => 'dashboard', :action => 'settings' %> </span>
       </div>
     </div>
   </div>

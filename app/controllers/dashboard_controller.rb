@@ -16,6 +16,10 @@ class DashboardController < ApplicationController
   def show
   end
 
+  def comments
+    @comments = Comment.all.order('created_at DESC')
+  end
+
   def posts
     @posts = Post.all.order('created_at DESC')
   end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
+  
   devise_for :users
   resources :posts do |member|
     resources :comments
@@ -20,5 +21,5 @@ Rails.application.routes.draw do
   get '/dashboard/user_edit/:id', to: 'dashboard#user_edit', :as => :user
   post '/dashboard/user_edit/:id', to: 'dashboard#user_update'
   patch '/dashboard/user_edit/:id', to: 'dashboard#user_update'
-  
+
 end
